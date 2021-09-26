@@ -1,4 +1,4 @@
-# DotSpatial
+# DotSpatial-2.0 For SmartLas by Li G.Q., 2021
 
 For documentation and code samples see
 https://dotspatial.codeplex.com/documentation
