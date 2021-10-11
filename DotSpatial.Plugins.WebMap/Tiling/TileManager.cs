@@ -66,7 +66,8 @@ namespace DotSpatial.Plugins.WebMap.Tiling
                          {
                              MaxDegreeOfParallelism = -1
                          };
-            Parallel.For((int)topLeftTileXy.Y, (int)btmRightTileXy.Y + 1, po, (y, loopState) => Parallel.For((int)topLeftTileXy.X, (int)btmRightTileXy.X + 1, po, (x, loopState2) =>
+            Parallel.For((int)topLeftTileXy.Y, (int)btmRightTileXy.Y + 1, po, (y, loopState) => 
+              Parallel.For((int)topLeftTileXy.X, (int)btmRightTileXy.X + 1, po, (x, loopState2) =>
                 {
                     if (bw.CancellationPending)
                     {

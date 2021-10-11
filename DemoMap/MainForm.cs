@@ -25,5 +25,10 @@ namespace DemoMap
             shell = this;
             appManager.LoadExtensions();
         }
+
+        private void MainForm_Load(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }

@@ -10,6 +10,7 @@ using DotSpatial.Data;
 using DotSpatial.Plugins.ScaleBar.Properties;
 using DotSpatial.Symbology;
 using NetTopologySuite.Geometries;
+//using NetTopologySuite.Geometries;
 
 namespace DotSpatial.Plugins.ScaleBar
 {

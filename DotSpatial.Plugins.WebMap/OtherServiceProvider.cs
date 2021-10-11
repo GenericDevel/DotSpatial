@@ -78,8 +78,12 @@ namespace DotSpatial.Plugins.WebMap
                 else
                 {
                     url = url.Replace("{zoom}", zoom.ToString(CultureInfo.InvariantCulture));
+                    url = url.Replace("{z}", zoom.ToString(CultureInfo.InvariantCulture));
                     url = url.Replace("{x}", x.ToString(CultureInfo.InvariantCulture));
                     url = url.Replace("{y}", y.ToString(CultureInfo.InvariantCulture));
+#if DEBUG
+                    Debug.WriteLine(" [OtherServiceProvider] url={0}", url);
+#endif 
                 }
 
                 using (var client = new WebClient())
@@ -100,8 +104,9 @@ namespace DotSpatial.Plugins.WebMap
                 {
                     return ExceptionToBitmap(ex, 256, 256);
                 }
-
+#if DEBUG
                 Debug.WriteLine(ex.Message);
+#endif 
             }
 
             return null;

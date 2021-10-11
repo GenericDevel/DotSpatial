@@ -165,8 +165,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Lib\BruTile.Desktop.dll" />
-    <Content Include="Lib\BruTile.dll" />
     <Content Include="Readme.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

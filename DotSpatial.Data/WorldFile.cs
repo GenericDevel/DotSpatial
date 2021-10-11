@@ -236,19 +236,25 @@ namespace DotSpatial.Data
         /// </summary>
         public void Open()
         {
-            if (File.Exists(Filename))
+            //string wf=File
+            if (!File.Exists(Filename))
             {
-                using (var sr = new StreamReader(Filename))
-                {
-                    Affine = new double[6];
-                    Affine[1] = NextValue(sr); // Dx
-                    Affine[2] = NextValue(sr); // Skew X
-                    Affine[4] = NextValue(sr); // Skew Y
-                    Affine[5] = NextValue(sr); // Dy
-                    Affine[0] = NextValue(sr); // Top Left X
-                    Affine[3] = NextValue(sr); // Top Left Y
-                }
+                Filename = Filename + "x";  //处理arcgis10.5以后的配准文件后缀添加了“x”
+                if (!File.Exists(Filename))  //如果都不存在，则直接退出
+                    return;
             }
+
+            using (var sr = new StreamReader(Filename))
+            {
+                Affine = new double[6];
+                Affine[1] = NextValue(sr); // Dx
+                Affine[2] = NextValue(sr); // Skew X
+                Affine[4] = NextValue(sr); // Skew Y
+                Affine[5] = NextValue(sr); // Dy
+                Affine[0] = NextValue(sr); // Top Left X
+                Affine[3] = NextValue(sr); // Top Left Y
+            }
+
         }
 
         /// <summary>

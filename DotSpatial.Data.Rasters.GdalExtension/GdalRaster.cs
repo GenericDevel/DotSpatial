@@ -91,7 +91,7 @@ namespace DotSpatial.Data.Rasters.GdalExtension
                 return base.Maximum;
             }
 
-            protected set
+            set
             {
                 base.Maximum = value;
                 if (_band != null)
@@ -119,7 +119,7 @@ namespace DotSpatial.Data.Rasters.GdalExtension
                 return base.Mean;
             }
 
-            protected set
+            set
             {
                 base.Mean = value;
                 if (_band != null)
@@ -147,7 +147,7 @@ namespace DotSpatial.Data.Rasters.GdalExtension
                 return base.Minimum;
             }
 
-            protected set
+            set
             {
                 base.Minimum = value;
                 if (_band != null)
